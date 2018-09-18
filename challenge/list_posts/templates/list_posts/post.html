@@ -1,9 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'list_posts/style.css' %}" />
+
 <h2>Post with id {{post.id}}</h2>
 
 <p>{{post.post_text}}</p>
 
-<p><strong>Results:</strong>{{post.up_votes}} vote{{post.up_votes|pluralize}} -- {{post.down_votes}}
-  vote{{post.down_votes|pluralize}}</p>
+<p><strong>Results:</strong> {{post.up_votes}} Up vote{{post.up_votes|pluralize}} --
+  {{post.down_votes}} Down vote{{post.down_votes|pluralize}} with a score of {{post.score}}</p>
 
 {% if error_message %} <p><strong>{{error_message}}</strong></p> {% endif %}
 

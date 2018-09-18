@@ -1,0 +1,10 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'list_posts/style.css' %}" />
+
+<h4>{{ post.post_text }}</h4>
+
+<p><strong>Results:</strong> {{post.up_votes}} Up vote{{post.up_votes|pluralize}} --
+      {{post.down_votes}} Down vote{{post.down_votes|pluralize}} with a score of {{post.score}}</p>
+
+<a href="{% url 'list_posts:index' %}">Go home?</a>

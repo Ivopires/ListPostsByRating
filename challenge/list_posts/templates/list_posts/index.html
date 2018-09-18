@@ -1,9 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'list_posts/style.css' %}" />
+
 {% if latest_posts_list %}
-<ul>
+<ul style="list-style: none;">
   {% for post in latest_posts_list %}
-  <li>
-    <a href="{% url 'list_posts:post' post.id %}">{{post.post_text}}</a>
-  </li>
+  <li style="font-family: Arial, Helvetica, sans-serif;">
+    <a href="{% url 'list_posts:post' post.id %}">{{post.post_text}}</a>, published on {{post.pub_date}}
+  </li><br />
   {% endfor %}
 </ul>
 {% else %}
