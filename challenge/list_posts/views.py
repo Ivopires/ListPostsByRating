@@ -7,6 +7,7 @@ from django.urls import reverse
 from django.template import loader
 from django.views import generic
 from django.shortcuts import get_object_or_404, render
+from django.utils import timezone
 from list_posts.models import Post
 
 
@@ -14,9 +15,16 @@ class PostDetailView(generic.DetailView):
     model = Post
     template_name = 'list_posts/post.html'
 
+    def get_queryset(self):
+        """
+        Excludes any posts that aren't published yet.
+        """
+        return Post.objects.filter(pub_date__lte=timezone.now())
+
 
 def index(request):
-    latest_posts_list = Post.objects.order_by('-pub_date')
+    latest_posts_list = Post.objects.filter(
+        pub_date__lte=timezone.now()).order_by('-pub_date')
     context = {'latest_posts_list': latest_posts_list}
     return render(request, 'list_posts/index.html', context=context)
 

@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 import numpy as np
+from django.utils import timezone
 from math import sqrt
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
@@ -9,7 +10,7 @@ from django.utils.encoding import python_2_unicode_compatible
 
 @python_2_unicode_compatible
 class Post(models.Model):
-    pub_date = models.DateTimeField('Date Published')
+    pub_date = models.DateTimeField('Date Published', default=timezone.now())
     post_text = models.CharField('Post content', max_length=500)
     up_votes = models.PositiveIntegerField('Up votes', default=0)
     down_votes = models.PositiveIntegerField('Down votes', default=0)
@@ -21,11 +22,12 @@ class Post(models.Model):
     def compute_score(self):
         """
         The compute_score function will compute the Wilson-score Interval,
-        depending on the number of up/down votes and the total number of votes.
+        which calculation depends on the number of up/down votes and the total
+        number of votes.
         Where:
          - p_hat - is the fraction of up votes out of total votes
          - total_votes - is the total number of votes
-         - z - is the normal distribution, which, in order to have 0.95
+         - z - is the normal distribution, which, in order to have 95%
                of confidence, has to be equal to 1.96
         """
 
