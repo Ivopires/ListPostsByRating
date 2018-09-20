@@ -12,6 +12,11 @@ App developed in Python, using the Django framework.
       pip install Django==1.11.15
     ```
 
+### Load db scheme
+```
+python manage.py migrate
+```
+
 ### Populate db with Posts
 
 ```
