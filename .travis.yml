@@ -1,0 +1,12 @@
+language: python
+python:
+  - "2.7"
+services:
+  - sql
+env:
+  -DJANGO=1.11.15 DB=sql
+before_script:
+  - python manage.py migrate
+script:
+  - python manage.py test list_posts
+
