@@ -2,9 +2,9 @@ language: python
 python:
   - "2.7"
 services:
-  - sql
+  - sqlite3
 install:
-- pip install -q Django=1.11.15
+- pip install -q Django==1.11.15
 before_script:
   - python manage.py migrate
 script:
