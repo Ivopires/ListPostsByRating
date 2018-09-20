@@ -7,7 +7,7 @@ App developed in Python, using the Django framework.
 
 ### Setup Django (version 1.11.15):
   1. Install pip (if you have not installed already): [Guide](https://packaging.python.org/tutorials/installing-packages/)
-  2. Install Django (version 1.11.15):
+  2. Install Django (version 1.11.15): </br>
     ```
     pip install Django==1.11.15
     ```
@@ -22,7 +22,7 @@ python manage.py shell
 ```
 
 ### Run tests
-```shell
+```
 python manage.py test list_posts
 ```
 
@@ -35,10 +35,10 @@ To run project you must follow the following steps:
 
 There are four available endpoints:
     ```
-    / 
-    /upvote/:post_id 
-    /downvote/:post_id 
-    /posts/ 
+    /</br>
+    /upvote/:post_id </br>
+    /downvote/:post_id </br>
+    /posts/ </br>
     ```
 
 The first endpoint is responsible to list the latest 10 posts, ordered by posting date, if by accident 'future' posts are added to the database, these will not show on the page. The second and third endpoints are responsible to give the up/down votes, respectively, to the post with the <post_id>. Finally, the last endpoint, will show all the available posts, ordered by 'score', being the top-scored posts on the top and the less-scored posts on the bottom.
