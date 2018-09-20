@@ -10,7 +10,7 @@ from django.utils.encoding import python_2_unicode_compatible
 
 @python_2_unicode_compatible
 class Post(models.Model):
-    pub_date = models.DateTimeField('Date Published', default=timezone.now())
+    pub_date = models.DateTimeField('Date Published', default=timezone.now)
     post_text = models.CharField('Post content', max_length=500)
     up_votes = models.PositiveIntegerField('Up votes', default=0)
     down_votes = models.PositiveIntegerField('Down votes', default=0)
