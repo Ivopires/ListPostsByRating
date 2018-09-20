@@ -1,7 +1,5 @@
-# ListPostsByRating
-App developed in Python, using the Django framework.
-
 # List Posts By Rating
+App developed in Python(2.7), using the Django(1.11.15) framework.
 
 ## How to run
 
