@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Ivopires/ListPostsByRating.svg?branch=challenge)](https://travis-ci.com/Ivopires/ListPostsByRating)
+
 # List Posts By Rating
 App developed in Python(2.7), using the Django(1.11.15) framework.
 
